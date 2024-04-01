@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Appoiment,Doctors
 
-# Register your models here.
+
+admin.site.register(Doctors)
+admin.site.register(Appoiment)
