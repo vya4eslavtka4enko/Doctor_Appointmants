@@ -40,44 +40,58 @@
 </div>
 <!--Form-->
     <div class="container mt-4" style="width:1000px">
-    <form>
+    <form method = 'POST'>
+        {%csrf_token%}
         <fieldset>
         <legend>Appointmanet Booking</legend>
         <div class="mb-3">
           <label for="disabledSelect" class="form-label">Select Doctor</label>
-          <select id="disabledSelect" class="form-select">
+          <select id="disabledSelect" class="form-select" name="doctor_name">
               {%for name_doctor in list_of_doctors%}
                 <option>{{name_doctor}}</option>
               {%endfor%}
           </select>
         </div>
+
          <div class="mb-3">
             <label for="DateAppointment" class="form-label">Date</label>
-            <input type="input" class="form-control" id="DateAppointment">
+            <input type="input" class="form-control" id="DateAppointment" name="date">
          </div>
 
          <div class="mb-3">
             <label for="TimeAppointment" class="form-label">Time</label>
-            <input type="input" class="form-control" id="TimeAppointment">
+            <input type="input" class="form-control" id="TimeAppointment" name="time">
          </div>
 
          <div class="mb-3">
             <label for="NameAppointment" class="form-label">Name</label>
-            <input type="input" class="form-control" id="NameAppointment">
+            <input type="input" class="form-control" id="NameAppointment" name="name">
          </div>
 
          <div class="mb-3">
             <label for="PhoneAppointment" class="form-label">Phone</label>
-            <input type="input" class="form-control" id="PhoneAppointment">
+            <input type="input" class="form-control" id="PhoneAppointment" name="phone">
          </div>
 
          <div class="mb-3">
             <label for="ReasonAppointment" class="form-label">Reason for Visit</label>
-            <input type="input" class="form-control" id="ReasonAppointment">
+            <input type="input" class="form-control" id="ReasonAppointment" name="reason">
          </div>
         <button type="submit" class="btn btn-primary">Apply</button>
       </fieldset>
     </form>
+    </div>
+
+
+    <div class="container" style="width:400px">
+      <ul class="list-group">
+        <li class="list-group-item">{{doctor_name}}</li>
+        <li class="list-group-item">{{date_appoiment}}</li>
+        <li class="list-group-item">{{time_appoiment}}</li>
+        <li class="list-group-item">{{name}}</li>
+        <li class="list-group-item">{{phone}}</li>
+        <li class="list-group-item">{{reason}}</li>
+    </ul>
     </div>
 
     {%endblock%}

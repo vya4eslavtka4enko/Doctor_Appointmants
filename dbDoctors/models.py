@@ -14,7 +14,7 @@ class Appoiment(models.Model):
     date_appoiment = models.DateField()
     time_appoiment = models.TimeField()
     patient_name = models.CharField(max_length=80)
-    patient_phone = models.IntegerField()
+    patient_phone = models.CharField(max_length=15)
     reason_for_visit = models.TextField(max_length=400)
 
     def __str__(self):
