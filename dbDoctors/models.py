@@ -10,7 +10,7 @@ class Doctors(models.Model):
 
 
 class Appoiment(models.Model):
-    doctor_name = models.ForeignKey(Doctors,on_delete=models.CASCADE)
+    doctor_name = models.ManyToManyField(Doctors)
     date_appoiment = models.DateField()
     time_appoiment = models.TimeField()
     patient_name = models.CharField(max_length=80)
